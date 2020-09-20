@@ -57,7 +57,7 @@ public class Sector {
     }
 
     /**
-     * Get a List of Counters
+     * Get a List of Counter
      * @return List Counters
      */
     public List<Counter> getCounters() {

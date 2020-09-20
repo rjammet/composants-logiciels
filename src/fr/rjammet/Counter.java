@@ -6,7 +6,7 @@ public class Counter {
     private final char type;
     private int indexPrevious;
     private int indexNew;
-
+    
     /**
      * Constructor of the Counter
      * @param id - ID of the Counter
