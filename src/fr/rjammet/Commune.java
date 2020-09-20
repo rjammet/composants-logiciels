@@ -76,7 +76,8 @@ public class Commune {
      * @return Integer of loss consumption
      */
     public int loss(){
-        int capacityA = 0, capacityV = 0;
+        int capacityA = 0;
+        int capacityV = 0;
 
         for(Sector sector : this.lesSectors){
             for(Counter counter : sector.getCounters()){
