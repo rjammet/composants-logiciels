@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Commune {
+    
     private final int id;
     private final String name;
     private final List<Sector> lesSectors;
@@ -49,7 +50,7 @@ public class Commune {
         return greenSector;
         //return lesSectors.stream().filter(Sector::isEspaceVert).collect(Collectors.toCollection(this::secteurEVerts));
     }
-    
+
 
     public int getId() {
         return id;
