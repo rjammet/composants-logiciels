@@ -9,8 +9,8 @@ public class Counter {
     
     /**
      * Constructor of the Counter
-     * @param id - ID of the Counter
-     * @param type - Type of the Counter
+     * @param id ID of the Counter
+     * @param type Type of the Counter
      */
     public Counter(int id, char type){
         this.id = id;
