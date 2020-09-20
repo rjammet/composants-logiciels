@@ -54,7 +54,7 @@ public class Commune {
     /**
      * Returns the volume dispensed by the counters of the
      * common for the specified meter type
-     * @param typeCounter - a type of counter
+     * @param typeCounter a type of counter
      * @return the volume dispensed
      */
     public int volumeDispensed(char typeCounter){
