@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Commune {
-    
+
     private final int id;
     private final String name;
     private final List<Sector> lesSectors;
@@ -51,6 +51,54 @@ public class Commune {
         //return lesSectors.stream().filter(Sector::isEspaceVert).collect(Collectors.toCollection(this::secteurEVerts));
     }
 
+    /**
+     * Returns the volume dispensed by the counters of the
+     * common for the specified meter type
+     * @param typeCounter - a type of counter
+     * @return the volume dispensed
+     */
+    public int volumeDispensed(char typeCounter){
+        int capacity = 0;
+
+        if(typeCounter == 'A' || typeCounter == 'V'){
+            for(Sector sector : this.lesSectors){
+                for(Counter counter : sector.getCounters()){
+                    if(counter.getType() == typeCounter) capacity += counter.consumption();
+                }
+            }
+        }
+        return capacity;
+    }
+
+    /**
+     * Returns the difference between the total volume delivered by the valves and the
+     * subscriber consumption
+     * @return Integer of loss consumption
+     */
+    public int loss(){
+        int capacityA = 0, capacityV = 0;
+
+        for(Sector sector : this.lesSectors){
+            for(Counter counter : sector.getCounters()){
+                if(counter.getType() == 'A') capacityA += counter.consumption();
+                if(counter.getType() == 'V') capacityV += counter.consumption();
+            }
+        }
+        return  capacityV - capacityA;
+    }
+
+    /**
+     * Calculates the percentage of losses compared to the volume dispensed
+     * by the valves
+     * @return Integer of type Anomaly
+     */
+    public int anomaly(){
+        int valves = this.volumeDispensed('A') + this.volumeDispensed('V');
+        int percent = 100 * (this.loss() / valves);
+        if(percent < 10) return 1;
+        if(percent <= 15) return 2;
+        return 3;
+    }
 
     public int getId() {
         return id;
