@@ -12,10 +12,10 @@ public class Sector {
 
     /**
      * Constructor Sector
-     * @param idSector - ID of the Sector
-     * @param nameSector - Name of the Sector
-     * @param greenSpace - Sector Green Space
-     * @param commune - Commune of the Sector
+     * @param idSector ID of the Sector
+     * @param nameSector Name of the Sector
+     * @param greenSpace Sector Green Space
+     * @param commune Commune of the Sector
      */
     public Sector(int idSector, String nameSector, boolean greenSpace, Commune commune) {
         this.idSector = idSector;
@@ -34,7 +34,7 @@ public class Sector {
 
     /**
      * Get ID Sector
-     * @return Integer - ID
+     * @return Integer ID
      */
     public int getIdSector() {
         return idSector;
@@ -42,7 +42,7 @@ public class Sector {
 
     /**
      * Get name of the Sector
-     * @return String - name
+     * @return String name
      */
     public String getNameSector() {
         return nameSector;
@@ -50,7 +50,7 @@ public class Sector {
 
     /**
      * If Sector is green space
-     * @return boolean - greenSpace
+     * @return boolean greenSpace
      */
     public boolean isGreenSpace() {
         return greenSpace;
