@@ -7,6 +7,6 @@ public class Main {
      * @param args String[]
      */
     public static void main(String[] args) {
-
+        
     }
 }
