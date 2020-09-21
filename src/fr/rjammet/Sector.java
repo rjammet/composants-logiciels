@@ -9,6 +9,7 @@ public class Sector {
     private final String nameSector;
     private final boolean greenSpace;
     private final List<Counter> counters;
+    private final Commune commune;
 
     /**
      * Constructor Sector
@@ -21,6 +22,7 @@ public class Sector {
         this.idSector = idSector;
         this.nameSector = nameSector;
         this.greenSpace = greenSpace;
+        this.commune = commune;
         this.counters = new ArrayList<>();
     }
 
